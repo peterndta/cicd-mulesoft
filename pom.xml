@@ -45,6 +45,12 @@
 						</properties>
 					</cloudHubDeployment>
 					<classifier>---- select project type ----</classifier>
+					<sharedLibraries>
+						<sharedLibrary>
+							<groupId>mysql</groupId>
+							<artifactId>mysql-connector-java</artifactId>
+						</sharedLibrary>
+					</sharedLibraries>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -68,6 +74,17 @@
 			<artifactId>mule-apikit-module</artifactId>
 			<version>1.10.4</version>
 			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.connectors</groupId>
+			<artifactId>mule-db-connector</artifactId>
+			<version>1.14.10</version>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.30</version>
 		</dependency>
 	</dependencies>
 
@@ -97,9 +114,9 @@
 			</snapshots>
 		</pluginRepository>
 		<pluginRepository>
-	    	<id>mule-public</id>
-	    	<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
-	    </pluginRepository>
+			<id>mule-public</id>
+			<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
+		</pluginRepository>
 	</pluginRepositories>
 
 </project>
