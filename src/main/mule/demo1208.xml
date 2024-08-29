@@ -102,6 +102,7 @@ payload map(emp, index) -> {
 	"phone": emp.EMP_PHONE,
 	"email": emp.EMP_EMAIL,
 	"skill": emp.EMP_SKILL,
+	"test": "test"
 }]]></ee:set-payload>
             </ee:message>
         </ee:transform>
