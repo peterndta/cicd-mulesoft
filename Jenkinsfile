@@ -16,7 +16,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-				bat 'mvn clean deploy -DmuleDeploy -Dusername=anhndtse150640 -Dpassword=Vdckkzew1'
+				bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy'
             }
         }
     }
