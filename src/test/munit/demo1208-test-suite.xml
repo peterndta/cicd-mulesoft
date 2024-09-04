@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="demo1208-test-suite.xml" />
+	<munit:test name="demo1208-test-suite-get:\get-employee:demo1208-configTest" doc:id="325aa346-1c4d-46f0-81b7-67506400b678" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\get-employee:demo1208-config" doc:id="1445dee1-38d7-4d61-a13b-07d4d3af91ca" name="get:\get-employee:demo1208-config"/>
+		</munit:execution>
+		<munit:validation >
+			<logger level="INFO" doc:name="Logger" doc:id="37780460-36ed-4577-85fb-ba18006da53d" message="#[payload]"/>
+			<munit-tools:assert doc:name="Assert Payload Not Null" doc:id="c0ebe35c-fe3b-44c8-a9ab-022f52380aa6" />
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

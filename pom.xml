@@ -15,6 +15,7 @@
 
 		<app.runtime>4.7.0</app.runtime>
 		<mule.maven.plugin.version>4.2.0</mule.maven.plugin.version>
+		<munit.version>3.2.1</munit.version>
 	</properties>
 
 	<build>
@@ -32,8 +33,12 @@
 				<configuration>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-<!-- 						<muleVersion>${app.runtime}</muleVersion> -->
-						<muleVersion>4.7-e-java17</muleVersion> -->
+						<!-- <muleVersion>${app.runtime}</muleVersion> -->
+						<muleVersion>4.7-e-java17</muleVersion>
+																								--&gt;
+
+
+
 						<username>${username}</username>
 						<password>${password}</password>
 						<applicationName>demo1208</applicationName>
@@ -52,6 +57,28 @@
 							<artifactId>mysql-connector-java</artifactId>
 						</sharedLibrary>
 					</sharedLibraries>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.mulesoft.munit.tools</groupId>
+				<artifactId>munit-maven-plugin</artifactId>
+				<version>${munit.version}</version>
+				<executions>
+					<execution>
+						<id>test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<coverage>
+						<runCoverage>true</runCoverage>
+						<formats>
+							<format>html</format>
+						</formats>
+					</coverage>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -86,6 +113,26 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.30</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-runner</artifactId>
+			<version>3.2.1</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.munit</groupId>
+			<artifactId>munit-tools</artifactId>
+			<version>3.2.1</version>
+			<classifier>mule-plugin</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.weave</groupId>
+			<artifactId>assertions</artifactId>
+			<version>1.2.1</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
