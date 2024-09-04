@@ -35,10 +35,12 @@
 				<configuration>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-						<!-- <muleVersion>${app.runtime}</muleVersion> -->
-						<muleVersion>4.7-e-java17</muleVersion>
+						<muleVersion>${app.runtime}</muleVersion>
+						<!-- <muleVersion>4.7-e-java17</muleVersion>
 						<username>${username}</username>
-						<password>${password}</password>
+						<password>${password}</password> -->
+						<username>anhndtse150640</username>
+						<password>Vdckkzew1</password>
 						<applicationName>demo1208</applicationName>
 						<environment>DEV</environment>
 						<region>us-east-1</region>
