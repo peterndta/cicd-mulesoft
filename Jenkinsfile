@@ -1,12 +1,6 @@
 pipeline {
     agent any
-    
-    environment {
-        // Define any environment variables here
-        DEPLOY_USERNAME = 'anhndtse150640'
-        DEPLOY_PASSWORD = 'Vdckkzew1'
-    }
-    
+   
     stages {
         stage('Build') {
             steps {
@@ -22,7 +16,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-				bat "mvn clean deploy -DmuleDeploy -Dusername=%DEPLOY_USERNAME% -Dpassword=%DEPLOY_PASSWORD%"
+				bat 'mvn clean deploy -DmuleDeploy -Dusername=anhndtse150640 -Dpassword=Vdckkzew1'
             }
         }
     }
